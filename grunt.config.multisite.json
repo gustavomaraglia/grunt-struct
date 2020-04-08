@@ -1,0 +1,56 @@
+{
+	"server": {
+		"site_A": "",
+		"site_B": ""
+	},
+	"src": {
+		"dir": "_src",
+		"scss": "scss",
+		"scripts": "js",
+		"images": "img",
+		"fonts": "fonts",
+		"html": "html",
+		"vendors": "vendors"
+	},
+	"dest": {
+		"dir": "Content",
+		"scss": "css",
+		"scripts": "js",
+		"images": "img",
+		"fonts": "fonts",
+		"html": "html",
+		"vendors": "vendors"
+	},
+	"sprite": {
+		"file": "sprite.png",
+		"src": "_sprites",
+		"scssDir": "utils",
+		"scssFile": "_sprites.scss"
+	},
+	"libraries": {
+		"scss": [
+			"node_modules/compass-mixins/lib"
+		],
+		"scripts": [],
+		"fonts": [],
+		"vendors": []
+	},
+	"scripts": {
+		"site_A": {
+			"main.js": [
+				"site_A/_src/js/other.js",
+				"site_A/_src/js/main.js"
+			]
+		},
+		"site_B": {
+			"main.js": [
+				"site_B/_src/js/other.js",
+				"site_B/_src/js/main.js"
+			]
+		}
+	},
+	"banner": true,
+	"title": "Grunt Project",
+	"author": "Gustavo Maraglia",
+	"authorUrl": "http://www.gustavomaraglia.com.br/"
+}

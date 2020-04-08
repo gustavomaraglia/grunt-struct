@@ -1,0 +1,41 @@
+@mixin btn {
+	display: inline-flex;
+	align-items: center;
+	font-weight: 700;
+	padding: 0 rem(10px);
+	color: $color-0;
+	background: transparent;
+	border: 1px solid $color-0;
+	width: auto;
+	font-size: rem(16px);
+	height: rem(32px);
+
+	@include border-radius(20px);
+	@include transition($ease-0);
+
+	&:hover {
+		text-decoration: none;
+		color: $color-0;
+		opacity: 0.8;
+	}
+}
+
+.btn {
+	@include btn();
+}
+
+.btn-next {
+	@include btn();
+
+	&:after {
+		content: "";
+		display: block;
+		width: rem(12px);
+		height: rem(12px);
+		margin-left: rem(6px);
+		background: use-svg(arrow, $color-0) no-repeat center center;
+		background-size: contain;
+
+		@include scale(-1, 1);
+	}
+}

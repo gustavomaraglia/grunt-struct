@@ -1,0 +1,33 @@
+@mixin ellipsis-multiline($line-height, $lines: 2, $set-height: true) {
+    @if $set-height == true {
+        height: rem($line-height * $lines);
+    } @else {
+        max-height: rem($line-height * $lines);
+    }
+
+    display: block;
+    overflow: hidden;
+    line-height: rem($line-height);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    text-overflow: -o-ellipsis-lastline;
+}
+
+@mixin use-sprite($sprite, $width: true) {
+    $url: #{nth($sprite, 9)};
+    $factor: 1px;
+
+    @if $width != true {
+        $factor: ($width + $sprite-padding) * 100 / nth($sprite, 5) / 100;
+    }
+
+    display: inline-block;
+    vertical-align: middle;
+    width: parseInt(nth($sprite, 5) + $sprite-padding) * $factor;
+    height: parseInt(nth($sprite, 6) + $sprite-padding) * $factor;
+    background-position: (parseInt(nth($sprite, 3)) * $factor) (parseInt(nth($sprite, 4)) * $factor);
+    background-size: (parseInt(nth($sprite, 7)) * $factor) auto;
+    background-image: v-url($url);
+    background-repeat: no-repeat;
+}
