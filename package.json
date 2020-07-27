@@ -18,14 +18,16 @@
     "deploy": "grunt dist"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
     "compass-mixins": "^0.12.10",
     "grunt": "^1.0.4",
+    "grunt-babel": "^8.0.0",
     "grunt-banner": "^0.6.0",
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-imagemin": "^4.0.0",
-    "grunt-contrib-uglify": "^0.2.4",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-include-replace": "^5.0.0",
     "grunt-sass": "^2.0.0",

@@ -210,6 +210,23 @@ module.exports = function (grunt) {
             }
         },
 
+        babel: {
+            preview: {
+                options: {
+                    sourceMap: true,
+                    presets: ['@babel/preset-env']
+                },
+                files: uglifyFiles
+            },
+            dist: {
+                options: {
+                    minified: true,
+                    presets: ['@babel/preset-env']
+                },
+                files: uglifyFiles
+            }
+        },
+
         copy: {
             fonts: {
                 files: generateArrCopy(app.libraries.fonts, app.dest.fonts, app.src.fonts)
@@ -344,7 +361,7 @@ module.exports = function (grunt) {
         'imagemin',
         'sprite',
         'sass:preview',
-        'uglify:preview',
+        'babel:preview',
         'includereplace'
     ]);
 
@@ -354,7 +371,7 @@ module.exports = function (grunt) {
         'imagemin',
         'sprite',
         'sass:dist',
-        'uglify:dist',
+        'babel:dist',
         'includereplace',
         'usebanner'
     ]);
