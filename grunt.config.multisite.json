@@ -35,20 +35,6 @@
 		"fonts": [],
 		"vendors": []
 	},
-	"scripts": {
-		"site_A": {
-			"main.js": [
-				"site_A/_src/js/other.js",
-				"site_A/_src/js/main.js"
-			]
-		},
-		"site_B": {
-			"main.js": [
-				"site_B/_src/js/other.js",
-				"site_B/_src/js/main.js"
-			]
-		}
-	},
 	"banner": true,
 	"title": "Grunt Project",
 	"author": "Gustavo Maraglia",
