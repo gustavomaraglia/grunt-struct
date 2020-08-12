@@ -30,6 +30,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-imagemin": "^4.0.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-cwebp": "^3.0.1",
     "grunt-include-replace": "^5.0.0",
     "grunt-sass": "^2.0.0",
     "grunt-spritesmith": "^6.6.0",

@@ -106,7 +106,7 @@ module.exports = function (grunt) {
 
       img: {
         files: ['<%= app.src.images %>/**/*'],
-        tasks: ['clean:images', 'imagemin', 'sprite']
+        tasks: ['clean:images', 'imagemin', 'cwebp', 'sprite']
       },
 
       sprite: {
@@ -272,6 +272,20 @@ module.exports = function (grunt) {
       }
     },
 
+    cwebp: {
+      dynamic: {
+        options: {
+          q: 50
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= app.src.images %>',
+          src: ['**/*.{png,jpg,gif}', '!<%= app.sprite.src %>/**'],
+          dest: '<%= app.dest.images %>'
+        }]
+      }
+    },
+
     includereplace: {
       default: {
         files: [{
@@ -334,6 +348,7 @@ module.exports = function (grunt) {
     'clean:all',
     'copy',
     'imagemin',
+    'cwebp',
     'sprite',
     'sass:preview',
     'autoprefixer',
@@ -345,6 +360,7 @@ module.exports = function (grunt) {
     'clean:all',
     'copy',
     'imagemin',
+    'cwebp',
     'sprite',
     'sass:dist',
     'autoprefixer',
