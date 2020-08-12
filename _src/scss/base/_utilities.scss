@@ -69,13 +69,11 @@ body {
   -webkit-tap-highlight-color: transparent;
   -webkit-print-color-adjust: exact;
   color-adjust: exact;
-
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 
   &:after,
   &:before {
-    @include box-sizing(border-box);
-
+    box-sizing: border-box;
     color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
@@ -105,8 +103,7 @@ sup {
 
 a {
   color: $color-0;
-
-  @include transition($ease-0);
+  transition: $ease-0;
 
   &:hover {
     color: $color-0;
@@ -282,6 +279,5 @@ input[placeholder] {
   border: none !important;
   margin: 0 !important;
   padding: 0 !important;
-
-  @include appearance(none);
+  appearance: none;
 }

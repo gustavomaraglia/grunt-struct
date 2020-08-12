@@ -91,7 +91,7 @@ module.exports = function (grunt) {
 
       compass: {
         files: ['<%= app.src.scss %>/**/*.scss'],
-        tasks: ['sass:preview']
+        tasks: ['sass:preview', 'autoprefixer']
       },
 
       html: {
@@ -158,6 +158,21 @@ module.exports = function (grunt) {
           extDot: 'last'
         }]
       }
+    },
+
+    autoprefixer: {
+      options: {
+        map: true,
+        browsers: ['last 2 versions']
+      },
+      preview: {
+        files: [{
+          expand: true,
+          cwd: '<%= app.dest.scss %>',
+          src: ['**/*.css'],
+          dest: '<%= app.dest.scss %>',
+        }]
+      },
     },
 
     babel: {
@@ -246,7 +261,7 @@ module.exports = function (grunt) {
           svgoPlugins: [{
             removeViewBox: false
           }],
-          use: [mozjpeg()] // Example plugin usage
+          use: [mozjpeg({ quality: 75 })] // Example plugin usage
         },
         files: [{
           expand: true,
@@ -321,6 +336,7 @@ module.exports = function (grunt) {
     'imagemin',
     'sprite',
     'sass:preview',
+    'autoprefixer',
     'babel:preview',
     'includereplace'
   ]);
@@ -331,6 +347,7 @@ module.exports = function (grunt) {
     'imagemin',
     'sprite',
     'sass:dist',
+    'autoprefixer',
     'babel:dist',
     'includereplace',
     'usebanner'

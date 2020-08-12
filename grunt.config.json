@@ -25,9 +25,7 @@
 		"scssFile": "_sprites.scss"
 	},
 	"libraries": {
-		"scss": [
-			"node_modules/compass-mixins/lib"
-		],
+		"scss": [],
 		"scripts": [],
 		"fonts": [],
 		"vendors": []

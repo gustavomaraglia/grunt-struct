@@ -9,9 +9,8 @@
 	width: auto;
 	font-size: rem(16px);
 	height: rem(32px);
-
-	@include border-radius(20px);
-	@include transition($ease-0);
+	transition: $ease-0;
+	border-radius: 20px;
 
 	&:hover {
 		text-decoration: none;
@@ -35,7 +34,6 @@
 		margin-left: rem(6px);
 		background: use-svg(arrow, $color-0) no-repeat center center;
 		background-size: contain;
-
-		@include scale(-1, 1);
+		transform: scale(-1, 1);
 	}
 }
